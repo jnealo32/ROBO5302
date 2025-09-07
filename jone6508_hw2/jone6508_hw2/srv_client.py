@@ -63,13 +63,15 @@ def main():
     vals_ms = [v * 1e3 for v in latencies]
     right = (max(vals_ms) if vals_ms else 1.0)
     plt.hist(vals_ms, bins=40)
-    plt.xlim(0, right)
+    plt.xlim(0, 5)
+    plt.ylim(0, 180)
 
     plt.title("Service Transfer Latency (ms)")
     plt.xlabel("Transfer latency (ms)")
     plt.ylabel("Count")
     plt.tight_layout()
     plt.savefig('service_latency_hist.png')
+    rclpy.shutdown()
 
 
 

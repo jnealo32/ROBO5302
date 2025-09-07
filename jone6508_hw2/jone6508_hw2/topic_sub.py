@@ -30,7 +30,8 @@ class LatencySubscriber(Node):
 
         plt.figure()
         plt.hist(vals_ms, bins=40)
-        plt.xlim(0, right)
+        plt.xlim(0, 5)
+        plt.ylim(0, 180)
 
         plt.title("Topic Transfer Latency (ms)")
         plt.xlabel("Transfer latency (ms)")
